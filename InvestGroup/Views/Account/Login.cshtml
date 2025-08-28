@@ -1,0 +1,118 @@
+﻿@model InvestGroup.Models.ViewModels.LoginViewModel
+
+@{
+    ViewData["Title"] = "Admin Log in";
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewData["Title"]</title>
+    <link rel="icon" type="image/png" href="~/imgs/logo.png" />
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-dark: #062f3a;
+            --primary-accent: #259c9a;
+            --light-gray: #f4f5f9;
+        }
+
+        body {
+            font-family: 'Cairo', sans-serif;
+            background-color: var(--light-gray);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .login-card {
+            width: 100%;
+            max-width: 420px;
+            padding: 40px;
+            border-radius: 20px;
+            background: white;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+            border: 1px solid #e0e0e0;
+        }
+
+        .login-header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+            .login-header img {
+                max-width: 150px;
+                margin-bottom: 15px;
+            }
+
+            .login-header h2 {
+                color: var(--primary-dark);
+                font-weight: 700;
+            }
+
+        .form-control {
+            border-radius: 10px;
+            padding: 12px 15px;
+            border: 1px solid #ced4da;
+        }
+
+            .form-control:focus {
+                border-color: var(--primary-accent);
+                box-shadow: 0 0 0 0.25rem rgba(37, 156, 154, 0.25);
+            }
+
+        .btn-primary {
+            background-color: var(--primary-accent);
+            border-color: var(--primary-accent);
+            border-radius: 10px;
+            padding: 12px;
+            font-weight: 700;
+            transition: all 0.3s ease;
+        }
+
+            .btn-primary:hover {
+                background-color: #208a87;
+                border-color: #208a87;
+                transform: translateY(-2px);
+            }
+    </style>
+</head>
+<body>
+    <div class="login-card">
+        <div class="login-header">
+            <img src="~/imgs/logo.png" alt="Invest Group Logo" />
+            <h2>Admin Panel Login</h2>
+        </div>
+        <form asp-route-returnurl="@ViewData["ReturnUrl"]" method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger mb-3"></div>
+            <div class="form-floating mb-3">
+                <input asp-for="Email" class="form-control" placeholder="Email" />
+                <label asp-for="Email"></label>
+                <span asp-validation-for="Email" class="text-danger"></span>
+            </div>
+            <div class="form-floating mb-3">
+                <input asp-for="Password" class="form-control" placeholder="Password" />
+                <label asp-for="Password"></label>
+                <span asp-validation-for="Password" class="text-danger"></span>
+            </div>
+            <div class="form-group form-check mb-4">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="RememberMe" /> @Html.DisplayNameFor(m => m.RememberMe)
+                </label>
+            </div>
+            <div class="form-group">
+                <button type="submit" class="btn btn-primary w-100">Log in</button>
+            </div>
+        </form>
+    </div>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+    <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+</body>
+</html>

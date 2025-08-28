@@ -1,0 +1,60 @@
+﻿@model InvestGroup.Models.GalleryCategory
+
+@{
+    ViewData["Title"] = Model.NameEn;
+}
+
+<section class="section-padding" id="furniture">
+    <div class="container">
+        <div class="row pt-5">
+            <div class="col-12">
+                <div class="project-header">
+                    <h1 class="project-title" data-ar="@Model.NameAr" data-en="@Model.NameEn">@Model.NameEn</h1>
+                </div>
+            </div>
+        </div>
+        <div class="row g-4 pt-4 justify-content-center align-items-center">
+            <div class="col-lg-8">
+                <div class="project-info">
+                    <div class="info-card">
+                        <h3 data-ar="نظرة عامة" data-en="Overview">Overview</h3>
+                        <p data-ar="الأسلوب الشخصي انعكاس للحياة نفسها، وينطبق الأمر نفسه على جاذبية مساحات المعيشة. بالنسبة لنا، كل منتج مصنوع بدقة هو رحلة استكشاف واستكشاف لتصميم مبتكر وخالد. نصنع كل قطعة بأسلوب تصميمي فريد يجمع بين الألوان الجذابة والمواد الأصلية والأشكال الجمالية. أهلاً بكم في عالم نورد المميز والحصري، الممزوج بالحرفية." data-en="Personal style is a reflection of life itself. And the same goes for the allure of living spaces. For us, each single precision made product is a journey of discovery and exploration for innovative and timeless design. We make each piece in an unique design detail way with combining seductive colors, genuine materials and aesthetics shapes. Welcome to Norde’s privileged and exclusive world blended with craftsmanship.">Personal style is a reflection of life itself. And the same goes for the allure of living spaces. For us, each single precision made product is a journey of discovery and exploration for innovative and timeless design. We make each piece in an unique design detail way with combining seductive colors, genuine materials and aesthetics shapes. Welcome to Norde’s privileged and exclusive world blended with craftsmanship.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        @if (Model.Images != null && Model.Images.Any())
+        {
+            <div class="row g-4 mt-4 justify-content-center align-items-center">
+                <div class="col-lg-8">
+                    <div class="image-gallery">
+                        <div class="main-image-container">
+                            <img id="mainImage" src="@Model.Images.First().ImageUrl" alt="@Model.NameEn" class="main-image">
+                            <div class="image-overlay">
+                                <button class="btn btn-light btn-sm" onclick="openFullscreen()">
+                                    <i class="fas fa-expand"></i>
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Swiper -->
+                        <div class="swiper mySwiper mt-3">
+                            <div class="swiper-wrapper">
+                                @foreach (var image in Model.Images)
+                                {
+                                    <div class="swiper-slide @(image == Model.Images.First() ? "active" : "")" onclick="changeImage(this, '@image.ImageUrl')">
+                                        <img src="@image.ImageUrl" alt="Gallery Image for @Model.NameEn">
+                                    </div>
+                                }
+                            </div>
+
+                            <div class="swiper-button-next"></div>
+                            <div class="swiper-button-prev"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</section>

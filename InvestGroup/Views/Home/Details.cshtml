@@ -1,0 +1,148 @@
+﻿@model InvestGroup.Models.Property
+
+@{
+    ViewData["Title"] = Model.TitleEn;
+}
+
+<section class="project-detail-section section-padding">
+    <div class="container" data-aos="fade-up" data-aos-duration="1200">
+        <!-- Project Header -->
+        <div class="row pt-5">
+            <div class="col-12">
+                <div class="project-header">
+                    <h1 class="project-title" data-ar="@Model.TitleAr" data-en="@Model.TitleEn">@Model.TitleEn</h1>
+                    <p class="project-location" data-ar="@Model.LocationAr" data-en="@Model.LocationEn"><i class="fas fa-map-marker-alt"></i> @Model.LocationEn</p>
+                    @if (!string.IsNullOrEmpty(Model.SpecialOfferEn))
+                    {
+                        <div class="project-badge offer">
+                            <span data-ar="@Model.SpecialOfferAr" data-en="@Model.SpecialOfferEn">@Model.SpecialOfferEn</span>
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+
+        <div class="row g-4">
+            <!-- Left Column: Image Gallery & Description -->
+            <div class="col-lg-8">
+                <div class="image-gallery">
+                    <div class="main-image-container shadow-lg">
+                        <img id="mainImage" src="@Model.MainImageUrl" alt="@Model.TitleEn" class="main-image">
+                        <div class="image-overlay">
+                            <button class="btn btn-light btn-sm" onclick="openFullscreen()">
+                                <i class="fas fa-expand"></i>
+                            </button>
+                        </div>
+                    </div>
+                    @if (Model.GalleryImages != null && Model.GalleryImages.Any())
+                    {
+                        <div class="swiper mySwiper mt-3">
+                            <div class="swiper-wrapper">
+                                <!-- Main Image Thumbnail -->
+                                <div class="swiper-slide active" onclick="changeImage(this, '@Model.MainImageUrl')">
+                                    <img src="@Model.MainImageUrl" alt="Main View">
+                                </div>
+                                <!-- Gallery Thumbnails -->
+                                @foreach (var image in Model.GalleryImages)
+                                {
+                                    <div class="swiper-slide" onclick="changeImage(this, '@image.ImageUrl')">
+                                        <img src="@image.ImageUrl" alt="Gallery Image">
+                                    </div>
+                                }
+                            </div>
+                            <div class="swiper-button-next"></div>
+                            <div class="swiper-button-prev"></div>
+                        </div>
+                    }
+                </div>
+
+                @if (!string.IsNullOrEmpty(Model.DescriptionEn))
+                {
+                    <div class="detailed-description mt-5">
+                        <h2 data-ar="وصف مفصل" data-en="Detailed Description">Detailed Description</h2>
+                        <p data-ar="@Model.DescriptionAr" data-en="@Model.DescriptionEn">@Html.Raw(Model.DescriptionEn.Replace("\n", "<br />"))</p>
+                    </div>
+                }
+            </div>
+
+            <!-- Right Column: Project Info -->
+            <div class="col-lg-4">
+                <div class="project-info">
+                    @if (!string.IsNullOrEmpty(Model.OverviewEn))
+                    {
+                        <div class="info-card">
+                            <h3 data-ar="نظرة عامة" data-en="Overview">Overview</h3>
+                            <p data-ar="@Model.OverviewAr" data-en="@Model.OverviewEn">@Model.OverviewEn</p>
+                        </div>
+                    }
+                    @if (!string.IsNullOrEmpty(Model.ProjectAreaEn))
+                    {
+                        <div class="info-card">
+                            <h3 data-ar="مساحة المشروع" data-en="Project Area">Project Area</h3>
+                            <p data-ar="@Model.ProjectAreaAr" data-en="@Model.ProjectAreaEn">@Model.ProjectAreaEn</p>
+                        </div>
+                    }
+                    @if (!string.IsNullOrEmpty(Model.FeaturesEn) && !string.IsNullOrEmpty(Model.FeaturesAr))
+                    {
+                        var featuresEn = Model.FeaturesEn.Split('|', StringSplitOptions.RemoveEmptyEntries);
+                        var featuresAr = Model.FeaturesAr.Split('|', StringSplitOptions.RemoveEmptyEntries);
+
+                        <div class="info-card">
+                            <h3 data-ar="الخدمات والمرافق" data-en="Services & Amenities">Services & Amenities</h3>
+                            <ul class="features-list">
+                                @for (int i = 0; i < Math.Min(featuresEn.Length, featuresAr.Length); i++)
+                                {
+                                    <li data-en="@featuresEn[i]" data-ar="@featuresAr[i]">@featuresEn[i]</li>
+                                }
+                            </ul>
+                        </div>
+                    }
+                    @if (!string.IsNullOrEmpty(Model.UnitTypesEn) && !string.IsNullOrEmpty(Model.UnitTypesAr))
+                    {
+                        var unitsEn = Model.UnitTypesEn.Split('|', StringSplitOptions.RemoveEmptyEntries);
+                        var unitsAr = Model.UnitTypesAr.Split('|', StringSplitOptions.RemoveEmptyEntries);
+
+                        <div class="info-card">
+                            <h3 data-ar="أنواع الوحدات" data-en="Unit Types">Unit Types</h3>
+                            <div class="unit-types">
+                                @for (int i = 0; i < Math.Min(unitsEn.Length, unitsAr.Length); i++)
+                                {
+                                    <div class="unit-type" data-en="@unitsEn[i]" data-ar="@unitsAr[i]">@unitsEn[i]</div>
+                                }
+                            </div>
+                        </div>
+                    }
+                    @if (!string.IsNullOrEmpty(Model.PaymentPlanEn) && !string.IsNullOrEmpty(Model.PaymentPlanAr))
+                    {
+                        var plansEn = Model.PaymentPlanEn.Split('|', StringSplitOptions.RemoveEmptyEntries);
+                        var plansAr = Model.PaymentPlanAr.Split('|', StringSplitOptions.RemoveEmptyEntries);
+
+                        <div class="info-card">
+                            <h3 data-ar="خطط الدفع" data-en="Payment Plan">Payment Plan</h3>
+                            <div class="payment-plans">
+                                @for (int i = 0; i < Math.Min(plansEn.Length, plansAr.Length); i++)
+                                {
+                                    <div class="payment-option" data-en="@plansEn[i]" data-ar="@plansAr[i]">@plansEn[i]</div>
+                                }
+                            </div>
+                        </div>
+                    }
+                    @if (!string.IsNullOrEmpty(Model.DeliveryInfoEn))
+                    {
+                        <div class="delivery-info" data-ar="@Model.DeliveryInfoAr" data-en="@Model.DeliveryInfoEn">@Model.DeliveryInfoEn</div>
+                    }
+                    @if (!string.IsNullOrEmpty(Model.MaintenanceInfoEn))
+                    {
+                        <div class="maintenance-info" data-ar="@Model.MaintenanceInfoAr" data-en="@Model.MaintenanceInfoEn">@Model.MaintenanceInfoEn</div>
+                    }
+                </div>
+            </div>
+        </div>
+        <div class="d-flex justify-content-center align-items-center mt-5">
+            <a asp-controller="Home" asp-action="Index" class="thm-btn">
+                <em data-ar="العودة الي الرئيسية" data-en="Back To Home"> Back To Home</em>
+                <span><i class="fas fa-arrow-right"></i></span>
+            </a>
+        </div>
+    </div>
+</section>

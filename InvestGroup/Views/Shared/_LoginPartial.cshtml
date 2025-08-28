@@ -1,0 +1,12 @@
+﻿@using Microsoft.AspNetCore.Identity
+@inject SignInManager<IdentityUser> SignInManager
+
+@if (SignInManager.IsSignedIn(User))
+{
+    <div class="d-flex align-items-center gap-2">
+        <a class="btn btn-outline-info btn-sm" asp-controller="Admin" asp-action="Index">Admin Panel</a>
+        <form asp-controller="Account" asp-action="Logout" method="post">
+            <button type="submit" class="btn btn-outline-danger btn-sm">Logout</button>
+        </form>
+    </div>
+}

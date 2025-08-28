@@ -1,0 +1,48 @@
+﻿@model InvestGroup.Models.Property
+
+@{
+    ViewData["Title"] = "Delete Property";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="d-flex justify-content-between align-items-center mb-4">
+    <h1 class="h2 text-danger">Confirm Deletion</h1>
+    <a asp-action="Properties" class="btn btn-secondary">Cancel and Back to List</a>
+</div>
+
+<div class="alert alert-danger">
+    <h4 class="alert-heading">Are you sure you want to delete this property?</h4>
+    <p>This action cannot be undone. All data associated with this property, including gallery images, will be permanently removed.</p>
+</div>
+
+<div class="card shadow-sm">
+    <div class="card-body p-4">
+        <h3 class="card-title">@Model.TitleEn / @Model.TitleAr</h3>
+        <hr />
+        <dl class="row">
+            <dt class="col-sm-3">
+                @Html.DisplayNameFor(model => model.TitleEn)
+            </dt>
+            <dd class="col-sm-9">
+                @Html.DisplayFor(model => model.TitleEn)
+            </dd>
+            <dt class="col-sm-3">
+                @Html.DisplayNameFor(model => model.LocationEn)
+            </dt>
+            <dd class="col-sm-9">
+                @Html.DisplayFor(model => model.LocationEn)
+            </dd>
+            <dt class="col-sm-3">
+                Main Image
+            </dt>
+            <dd class="col-sm-9">
+                <img src="@Model.MainImageUrl" width="150" class="rounded" />
+            </dd>
+        </dl>
+
+        <form asp-action="Delete" class="mt-4">
+            <input type="hidden" asp-for="Id" />
+            <button type="submit" class="btn btn-danger"><i class="fas fa-trash-alt me-2"></i>Yes, Delete this Property</button>
+        </form>
+    </div>
+</div>
