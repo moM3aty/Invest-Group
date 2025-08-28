@@ -216,68 +216,6 @@ wwwroot\lib\jquery\dist\jquery.js
 wwwroot\lib\jquery\dist\jquery.min.js
 wwwroot\lib\jquery\dist\jquery.min.map
 wwwroot\lib\jquery\LICENSE.txt
-wwwroot\uploads\gallery\Screenshot 2025-06-17 194419_255536248.png
-wwwroot\uploads\gallery\Screenshot 2025-06-17 195104_255536251.png
-wwwroot\uploads\gallery\Screenshot 2025-06-17 195218_255536256.png
-wwwroot\uploads\gallery\Screenshot 2025-06-20 160723_255536273.png
-wwwroot\uploads\gallery\Screenshot 2025-06-20 161401_255536275.png
-wwwroot\uploads\gallery\Screenshot 2025-06-21 230844_255536276.png
-wwwroot\uploads\gallery\Screenshot 2025-06-21 230926_255536277.png
-wwwroot\uploads\gallery\Screenshot 2025-06-21 231037_255536284.png
-wwwroot\uploads\gallery\Screenshot 2025-06-22 175531_255536287.png
-wwwroot\uploads\gallery\Screenshot 2025-06-22 181349_255536292.png
-wwwroot\uploads\gallery\Screenshot 2025-06-22 182236_255536294.png
-wwwroot\uploads\gallery\Screenshot 2025-06-22 182442_255536299.png
-wwwroot\uploads\gallery\Screenshot 2025-06-22 182901_255536305.png
-wwwroot\uploads\gallery\Screenshot 2025-06-22 185701_255516412.png
-wwwroot\uploads\gallery\Screenshot 2025-06-22 185701_255536307.png
-wwwroot\uploads\gallery\Screenshot 2025-06-22 185909_255516470.png
-wwwroot\uploads\gallery\Screenshot 2025-06-22 185909_255536310.png
-wwwroot\uploads\gallery\Screenshot 2025-06-22 190722_255516481.png
-wwwroot\uploads\gallery\Screenshot 2025-06-22 190722_255536324.png
-wwwroot\uploads\gallery\Screenshot 2025-06-22 190923_255516510.png
-wwwroot\uploads\gallery\Screenshot 2025-06-22 190923_255536329.png
-wwwroot\uploads\gallery\Screenshot 2025-06-22 191453_255516513.png
-wwwroot\uploads\gallery\Screenshot 2025-06-22 191453_255536332.png
-wwwroot\uploads\gallery\Screenshot 2025-06-22 191622_255516536.png
-wwwroot\uploads\gallery\Screenshot 2025-06-22 191622_255536333.png
-wwwroot\uploads\gallery\Screenshot 2025-06-22 191753_255516538.png
-wwwroot\uploads\gallery\Screenshot 2025-06-22 191753_255536335.png
-wwwroot\uploads\gallery\Screenshot 2025-06-22 195338_255516540.png
-wwwroot\uploads\gallery\Screenshot 2025-06-22 195338_255536338.png
-wwwroot\uploads\gallery\Screenshot 2025-06-22 195829_255516542.png
-wwwroot\uploads\gallery\Screenshot 2025-06-22 195829_255536362.png
-wwwroot\uploads\gallery\Screenshot 2025-06-22 200852_255516546.png
-wwwroot\uploads\gallery\Screenshot 2025-06-22 200852_255536364.png
-wwwroot\uploads\gallery\Screenshot 2025-06-23 181536_255516549.png
-wwwroot\uploads\gallery\Screenshot 2025-06-23 181536_255536366.png
-wwwroot\uploads\gallery\Screenshot 2025-06-24 012718_255516553.png
-wwwroot\uploads\gallery\Screenshot 2025-06-24 012718_255536369.png
-wwwroot\uploads\gallery\Screenshot 2025-06-24 013618_255536371.png
-wwwroot\uploads\gallery\Screenshot 2025-06-24 190743_255516557.png
-wwwroot\uploads\gallery\Screenshot 2025-06-24 190743_255536373.png
-wwwroot\uploads\gallery\Screenshot 2025-06-24 202729_255516559.png
-wwwroot\uploads\gallery\Screenshot 2025-06-24 202729_255536375.png
-wwwroot\uploads\gallery\Screenshot 2025-06-24 204203_255516563.png
-wwwroot\uploads\gallery\Screenshot 2025-06-24 204203_255536379.png
-wwwroot\uploads\gallery\Screenshot 2025-06-24 204457_255516571.png
-wwwroot\uploads\gallery\Screenshot 2025-06-24 204457_255536381.png
-wwwroot\uploads\gallery\Screenshot 2025-06-24 204816_255516573.png
-wwwroot\uploads\gallery\Screenshot 2025-06-24 204816_255536382.png
-wwwroot\uploads\gallery\Screenshot 2025-06-24 204959_255516575.png
-wwwroot\uploads\gallery\Screenshot 2025-06-24 204959_255536385.png
-wwwroot\uploads\gallery\Screenshot 2025-06-24 210045_255516577.png
-wwwroot\uploads\gallery\Screenshot 2025-06-24 210045_255536386.png
-wwwroot\uploads\gallery\Screenshot 2025-06-24 212435_255536390.png
-wwwroot\uploads\properties\done_254735673.png
-wwwroot\uploads\properties\img_254735295.jpg
-wwwroot\uploads\properties\Screenshot 2025-06-21 230926_251448007.png
-wwwroot\uploads\properties\Screenshot 2025-06-21 231037_251448025.png
-wwwroot\uploads\properties\Screenshot 2025-06-22 175531_251448028.png
-wwwroot\uploads\properties\Screenshot 2025-06-22 181349_251448053.png
-wwwroot\uploads\properties\Screenshot 2025-06-22 182236_251448073.png
-wwwroot\uploads\properties\Screenshot 2025-06-22 182442_251448075.png
-wwwroot\uploads\properties\Screenshot 2025-06-22 182901_251448080.png
 wwwroot\webfonts\fa-brands-400.ttf
 wwwroot\webfonts\fa-brands-400.woff2
 wwwroot\webfonts\fa-regular-400.ttf

@@ -141,3 +141,4 @@ F:\GitHub\InvestGroup\InvestGroup\obj\Debug\net8.0\refint\InvestGroup.dll
 F:\GitHub\InvestGroup\InvestGroup\obj\Debug\net8.0\InvestGroup.pdb
 F:\GitHub\InvestGroup\InvestGroup\obj\Debug\net8.0\InvestGroup.genruntimeconfig.cache
 F:\GitHub\InvestGroup\InvestGroup\obj\Debug\net8.0\ref\InvestGroup.dll
+F:\GitHub\InvestGroup\InvestGroup\obj\Debug\net8.0\InvestGroup.sourcelink.json

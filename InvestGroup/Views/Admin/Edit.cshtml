@@ -19,77 +19,82 @@
         <div class="card-body p-4">
             <div asp-validation-summary="ModelOnly" class="text-danger mb-3"></div>
 
-            <ul class="nav nav-tabs" id="myTab" role="tablist">
+            <ul class="nav nav-tabs nav-pills nav-fill mb-4" id="myTab" role="tablist">
                 <li class="nav-item" role="presentation"><button class="nav-link active" id="basic-tab" data-bs-toggle="tab" data-bs-target="#basic" type="button" role="tab">Basic Info</button></li>
                 <li class="nav-item" role="presentation"><button class="nav-link" id="details-tab" data-bs-toggle="tab" data-bs-target="#details" type="button" role="tab">Details & Features</button></li>
                 <li class="nav-item" role="presentation"><button class="nav-link" id="media-tab" data-bs-toggle="tab" data-bs-target="#media" type="button" role="tab">Media & Data</button></li>
             </ul>
 
-            <div class="tab-content p-3 border border-top-0" id="myTabContent">
+            <div class="tab-content" id="myTabContent">
                 <!-- Basic Info Tab -->
                 <div class="tab-pane fade show active" id="basic" role="tabpanel">
-                    <div class="row mt-3">
-                        <div class="col-md-6 mb-3"><label asp-for="TitleEn" class="form-label fw-bold"></label><input asp-for="TitleEn" class="form-control" /></div>
-                        <div class="col-md-6 mb-3"><label asp-for="TitleAr" class="form-label fw-bold"></label><input asp-for="TitleAr" class="form-control" dir="rtl" /></div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-6 mb-3"><label asp-for="LocationEn" class="form-label fw-bold"></label><input asp-for="LocationEn" class="form-control" /></div>
-                        <div class="col-md-6 mb-3"><label asp-for="LocationAr" class="form-label fw-bold"></label><input asp-for="LocationAr" class="form-control" dir="rtl" /></div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-6 mb-3"><label asp-for="OverviewEn" class="form-label fw-bold"></label><textarea asp-for="OverviewEn" class="form-control" rows="4"></textarea></div>
-                        <div class="col-md-6 mb-3"><label asp-for="OverviewAr" class="form-label fw-bold"></label><textarea asp-for="OverviewAr" class="form-control" rows="4" dir="rtl"></textarea></div>
+                    <div class="row g-3">
+                        <div class="col-md-6"><div class="form-floating"><input asp-for="TitleEn" class="form-control" placeholder=" " /><label asp-for="TitleEn"></label></div></div>
+                        <div class="col-md-6"><div class="form-floating"><input asp-for="TitleAr" class="form-control" placeholder=" " dir="rtl" /><label asp-for="TitleAr"></label></div></div>
+                        <div class="col-md-6"><div class="form-floating"><input asp-for="LocationEn" class="form-control" placeholder=" " /><label asp-for="LocationEn"></label></div></div>
+                        <div class="col-md-6"><div class="form-floating"><input asp-for="LocationAr" class="form-control" placeholder=" " dir="rtl" /><label asp-for="LocationAr"></label></div></div>
+                        <div class="col-md-6"><div class="form-floating"><textarea asp-for="OverviewEn" class="form-control" placeholder=" " style="height: 120px"></textarea><label asp-for="OverviewEn"></label></div></div>
+                        <div class="col-md-6"><div class="form-floating"><textarea asp-for="OverviewAr" class="form-control" placeholder=" " style="height: 120px" dir="rtl"></textarea><label asp-for="OverviewAr"></label></div></div>
                     </div>
                 </div>
 
                 <!-- Details Tab -->
                 <div class="tab-pane fade" id="details" role="tabpanel">
-                    <div class="row mt-3">
-                        <div class="col-md-6 mb-3"><label asp-for="DescriptionEn" class="form-label fw-bold"></label><textarea asp-for="DescriptionEn" class="form-control" rows="5"></textarea></div>
-                        <div class="col-md-6 mb-3"><label asp-for="DescriptionAr" class="form-label fw-bold"></label><textarea asp-for="DescriptionAr" class="form-control" rows="5" dir="rtl"></textarea></div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-6 mb-3"><label asp-for="FeaturesEn" class="form-label fw-bold"></label><textarea asp-for="FeaturesEn" class="form-control" rows="4"></textarea></div>
-                        <div class="col-md-6 mb-3"><label asp-for="FeaturesAr" class="form-label fw-bold"></label><textarea asp-for="FeaturesAr" class="form-control" rows="4" dir="rtl"></textarea></div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-6 mb-3"><label asp-for="UnitTypesEn" class="form-label fw-bold"></label><textarea asp-for="UnitTypesEn" class="form-control" rows="3"></textarea></div>
-                        <div class="col-md-6 mb-3"><label asp-for="UnitTypesAr" class="form-label fw-bold"></label><textarea asp-for="UnitTypesAr" class="form-control" rows="3" dir="rtl"></textarea></div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-6 mb-3"><label asp-for="PaymentPlanEn" class="form-label fw-bold"></label><textarea asp-for="PaymentPlanEn" class="form-control" rows="3"></textarea></div>
-                        <div class="col-md-6 mb-3"><label asp-for="PaymentPlanAr" class="form-label fw-bold"></label><textarea asp-for="PaymentPlanAr" class="form-control" rows="3" dir="rtl"></textarea></div>
+                    <div class="row g-3">
+                        <div class="col-md-6"><div class="form-floating"><textarea asp-for="DescriptionEn" class="form-control" placeholder=" " style="height: 150px"></textarea><label asp-for="DescriptionEn"></label></div></div>
+                        <div class="col-md-6"><div class="form-floating"><textarea asp-for="DescriptionAr" class="form-control" placeholder=" " style="height: 150px" dir="rtl"></textarea><label asp-for="DescriptionAr"></label></div></div>
+                        <div class="col-md-6"><div class="form-floating"><textarea asp-for="FeaturesEn" class="form-control" placeholder=" " style="height: 120px"></textarea><label asp-for="FeaturesEn"></label></div></div>
+                        <div class="col-md-6"><div class="form-floating"><textarea asp-for="FeaturesAr" class="form-control" placeholder=" " style="height: 120px" dir="rtl"></textarea><label asp-for="FeaturesAr"></label></div></div>
+                        <div class="col-md-6"><div class="form-floating"><textarea asp-for="UnitTypesEn" class="form-control" placeholder=" " style="height: 100px"></textarea><label asp-for="UnitTypesEn"></label></div></div>
+                        <div class="col-md-6"><div class="form-floating"><textarea asp-for="UnitTypesAr" class="form-control" placeholder=" " style="height: 100px" dir="rtl"></textarea><label asp-for="UnitTypesAr"></label></div></div>
+                        <div class="col-md-6"><div class="form-floating"><textarea asp-for="PaymentPlanEn" class="form-control" placeholder=" " style="height: 100px"></textarea><label asp-for="PaymentPlanEn"></label></div></div>
+                        <div class="col-md-6"><div class="form-floating"><textarea asp-for="PaymentPlanAr" class="form-control" placeholder=" " style="height: 100px" dir="rtl"></textarea><label asp-for="PaymentPlanAr"></label></div></div>
                     </div>
                 </div>
 
                 <!-- Media & Data Tab -->
                 <div class="tab-pane fade" id="media" role="tabpanel">
-                    <div class="row mt-3">
-                        <div class="col-md-6 mb-3"><label asp-for="ProjectAreaEn" class="form-label fw-bold"></label><input asp-for="ProjectAreaEn" class="form-control" /></div>
-                        <div class="col-md-6 mb-3"><label asp-for="ProjectAreaAr" class="form-label fw-bold"></label><input asp-for="ProjectAreaAr" class="form-control" dir="rtl" /></div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-6 mb-3"><label asp-for="DeliveryInfoEn" class="form-label fw-bold"></label><input asp-for="DeliveryInfoEn" class="form-control" /></div>
-                        <div class="col-md-6 mb-3"><label asp-for="DeliveryInfoAr" class="form-label fw-bold"></label><input asp-for="DeliveryInfoAr" class="form-control" dir="rtl" /></div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-6 mb-3"><label asp-for="MaintenanceInfoEn" class="form-label fw-bold"></label><input asp-for="MaintenanceInfoEn" class="form-control" /></div>
-                        <div class="col-md-6 mb-3"><label asp-for="MaintenanceInfoAr" class="form-label fw-bold"></label><input asp-for="MaintenanceInfoAr" class="form-control" dir="rtl" /></div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-6 mb-3"><label asp-for="SpecialOfferEn" class="form-label fw-bold"></label><input asp-for="SpecialOfferEn" class="form-control" /></div>
-                        <div class="col-md-6 mb-3"><label asp-for="SpecialOfferAr" class="form-label fw-bold"></label><input asp-for="SpecialOfferAr" class="form-control" dir="rtl" /></div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-6 mb-3"><label asp-for="Category" class="form-label fw-bold"></label><select asp-for="Category" class="form-select"><option value="0">Apartment</option><option value="1">Finishing</option></select></div>
-                        <div class="col-md-6 mb-3"><label asp-for="Price" class="form-label fw-bold"></label><input asp-for="Price" class="form-control" /></div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-6 mb-3"><label class="form-label fw-bold">Current Main Image</label><br /><img src="@Model.MainImageUrl" id="mainImagePreview" width="150" class="rounded mb-2 shadow-sm" /><label class="form-label">Change Main Image</label><input type="file" name="mainImageFile" id="mainImageInput" class="form-control" /></div>
-                        <div class="col-md-6 mb-3"><label class="form-label fw-bold">Gallery Images</label><div class="d-flex flex-wrap gap-2 border p-2 rounded mb-2" style="min-height: 100px;">@foreach(var image in Model.GalleryImages){
-                        <div class="position-relative" id="gallery-image-@image.Id"><img src="@image.ImageUrl" width="100" class="rounded" /><button type="button" class="btn btn-danger btn-sm position-absolute top-0 end-0" style="line-height:1; padding: 2px 5px;" onclick="deleteImage(@image.Id)">×</button></div>
+                    <div class="row g-3">
+                        <div class="col-md-6"><div class="form-floating"><input asp-for="ProjectAreaEn" class="form-control" placeholder=" " /><label asp-for="ProjectAreaEn"></label></div></div>
+                        <div class="col-md-6"><div class="form-floating"><input asp-for="ProjectAreaAr" class="form-control" placeholder=" " dir="rtl" /><label asp-for="ProjectAreaAr"></label></div></div>
+                        <div class="col-md-6"><div class="form-floating"><input asp-for="DeliveryInfoEn" class="form-control" placeholder=" " /><label asp-for="DeliveryInfoEn"></label></div></div>
+                        <div class="col-md-6"><div class="form-floating"><input asp-for="DeliveryInfoAr" class="form-control" placeholder=" " dir="rtl" /><label asp-for="DeliveryInfoAr"></label></div></div>
+                        <div class="col-md-6"><div class="form-floating"><input asp-for="MaintenanceInfoEn" class="form-control" placeholder=" " /><label asp-for="MaintenanceInfoEn"></label></div></div>
+                        <div class="col-md-6"><div class="form-floating"><input asp-for="MaintenanceInfoAr" class="form-control" placeholder=" " dir="rtl" /><label asp-for="MaintenanceInfoAr"></label></div></div>
+                        <div class="col-md-6"><div class="form-floating"><input asp-for="SpecialOfferEn" class="form-control" placeholder=" " /><label asp-for="SpecialOfferEn"></label></div></div>
+                        <div class="col-md-6"><div class="form-floating"><input asp-for="SpecialOfferAr" class="form-control" placeholder=" " dir="rtl" /><label asp-for="SpecialOfferAr"></label></div></div>
+                        <div class="col-md-6"><div class="form-floating"><select asp-for="Category" class="form-select"><option value="0">Apartment</option><option value="1">Finishing</option></select><label asp-for="Category"></label></div></div>
+                        <div class="col-md-6"><div class="form-floating"><input asp-for="Price" class="form-control" placeholder=" " /><label asp-for="Price"></label></div></div>
+
+                        <div class="col-12">
+                            <div class="card mt-3">
+                                <div class="card-body">
+                                    <div class="row g-3">
+                                        <div class="col-md-6">
+                                            <label class="form-label fw-bold">Main Image</label>
+                                            <img src="@Model.MainImageUrl" id="mainImagePreview" width="150" class="d-block rounded mb-2 shadow-sm" />
+                                            <label class="form-label">Change Main Image (Optional)</label>
+                                            <input type="file" name="mainImageFile" id="mainImageInput" class="form-control" />
+                                        </div>
+                                        <div class="col-md-6">
+                                            <label class="form-label fw-bold">Gallery Images</label>
+                                            <div class="d-flex flex-wrap gap-2 border p-2 rounded mb-2" style="min-height: 100px;">
+                                                @foreach (var image in Model.GalleryImages)
+                                                {
+                                                    <div class="position-relative" id="gallery-image-@image.Id">
+                                                        <img src="@image.ImageUrl" style="width: 100px; height: 100px; object-fit: cover;" class="rounded" />
+                                                        <button type="button" class="btn btn-danger btn-sm position-absolute top-0 end-0" style="line-height:1; padding: 2px 5px;" onclick="deleteImage(@image.Id)">×</button>
+                                                    </div>
                                                 }
-</div><label class="form-label">Add New Gallery Images</label><input type="file" name="galleryFiles" id="galleryFilesInput" class="form-control" multiple /><div id="galleryPreview" class="d-flex flex-wrap gap-2 mt-2 border p-2 rounded" style="min-height: 50px;"></div></div>
+                                            </div>
+                                            <label class="form-label">Add New Gallery Images</label>
+                                            <input type="file" name="galleryFiles" id="galleryFilesInput" class="form-control" multiple />
+                                            <div id="galleryPreview" class="d-flex flex-wrap gap-2 mt-2 border p-2 rounded" style="min-height: 50px;"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -105,9 +110,7 @@
         $("#mainImageInput").change(function() {
             if (this.files && this.files[0]) {
                 var reader = new FileReader();
-                reader.onload = function(e) {
-                    $('#mainImagePreview').attr('src', e.target.result);
-                }
+                reader.onload = function(e) { $('#mainImagePreview').attr('src', e.target.result); }
                 reader.readAsDataURL(this.files[0]);
             }
         });
@@ -118,12 +121,7 @@
                 $.each(this.files, function(i, file) {
                     var reader = new FileReader();
                     reader.onload = function(e) {
-                        var img = $('<img/>').attr('src', e.target.result).css({
-                            'width': '100px',
-                            'height': '100px',
-                            'object-fit': 'cover',
-                            'border-radius': '5px'
-                        });
+                        var img = $('<img/>').attr('src', e.target.result).css({ 'width': '100px', 'height': '100px', 'object-fit': 'cover', 'border-radius': '5px' });
                         $('#galleryPreview').append(img);
                     }
                     reader.readAsDataURL(file);
