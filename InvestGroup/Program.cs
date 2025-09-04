@@ -79,7 +79,7 @@ async Task SeedAdminUser(IServiceProvider serviceProvider)
             EmailConfirmed = true
         };
 
-        var result = await userManager.CreateAsync(adminUser, "Admin@12345");
+        var result = await userManager.CreateAsync(adminUser, "YourPassword");
 
         if (!result.Succeeded)
         {
