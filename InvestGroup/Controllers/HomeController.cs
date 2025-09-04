@@ -17,8 +17,8 @@ namespace InvestGroup.Controllers
 
         public async Task<IActionResult> Index()
         {
-            var properties = await _context.Properties.Where(p => p.Category == 0).ToListAsync(); 
-            ViewData["FinishingProperties"] = await _context.Properties.Where(p => p.Category == 1).ToListAsync();
+            var properties = await _context.Properties.ToListAsync(); 
+            ViewData["FinishingProperties"] = await _context.Properties.ToListAsync();
             return View(properties);
         }
 

@@ -252,12 +252,24 @@
                                 @(property.OverviewEn != null && property.OverviewEn.Length > 150 ? property.OverviewEn.Substring(0, 150) + "..." : property.OverviewEn)
                             </p>
 
-                            @if (!string.IsNullOrEmpty(property.PaymentPlanEn))
+                          @{
+
+                                var paymentPlanEnItems = property.PaymentPlanEn?.Split('|', StringSplitOptions.RemoveEmptyEntries).Take(3).ToArray() ?? Array.Empty<string>();
+                                var paymentPlanArItems = property.PaymentPlanAr?.Split('|', StringSplitOptions.RemoveEmptyEntries).Take(3).ToArray() ?? Array.Empty<string>();
+                            }
+
+                            @if (paymentPlanEnItems.Any())
                             {
                                 <div class="property-card-new__features">
-                                    @foreach (var item in property.PaymentPlanEn.Split('|', System.StringSplitOptions.RemoveEmptyEntries).Take(3))
+                                    @for (var i = 0; i < paymentPlanEnItems.Length; i++)
                                     {
-                                        <span><i class="fas fa-hand-holding-usd"></i>@item</span>
+                                        var itemEn = paymentPlanEnItems[i];
+            
+                                        var itemAr = (i < paymentPlanArItems.Length) ? paymentPlanArItems[i] : itemEn;
+            
+                                        <span data-en="@itemEn" data-ar="@itemAr">
+                                            <i class="fas fa-hand-holding-usd"></i>@itemEn
+                                        </span>
                                     }
                                 </div>
                             }
@@ -275,70 +287,70 @@
         </div>
     </div>
 </section>
-
 <section class="team section-padding" id="team">
-    <div class="container ">
+    <div class="container">
         <div class="heading text-center">
-            <h2 class="section-title__tagline">Our Team</h2>
+            <h2 class="section-title__tagline" data-en="Our Team" data-ar="فريقنا">Our Team</h2>
         </div>
-        <div class="row g-4 ">
+        <div class="row g-4">
             <div class="col-lg-4">
-                <div class="card ">
-                    <div class="img ">
-                        <img src="~/imgs/team1.jpg " alt="chefs1 ">
-                        <div class="icons ">
-                            <a href="https://x.com/" target="_blank"><i class="fa-brands fa-twitter "></i></a>
-                            <a href="https://www.facebook.com/" target="_blank"><i class="fa-brands fa-facebook-f "></i></a>
-                            <a href="https://www.instagram.com/" target="_blank"><i class="fa-brands fa-instagram "></i></a>
-                            <a href="https://www.linkedin.com/" target="_blank"><i class="fa-brands fa-linkedin "></i></a>
+                <div class="card">
+                    <div class="img">
+                        <img src="https://image.pollinations.ai/prompt/medium shot portrait of an Arab man named Ahmed El-Masry, in his 40s, professional, confident, short dark hair, slight beard, wearing a business shirt, slight smile, against a plain white background" alt="Ahmed El-Masry">
+                        <div class="icons">
+                            <a href="https://x.com/" target="_blank"><i class="fa-brands fa-twitter"></i></a>
+                            <a href="https://www.facebook.com/" target="_blank"><i class="fa-brands fa-facebook-f"></i></a>
+                            <a href="https://www.instagram.com/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+                            <a href="https://www.linkedin.com/" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
                         </div>
                     </div>
-                    <div class="text ">
-                        <h3>Walter White</h3>
-                        <p>Velit aut quia fugit et et. Dolorum ea voluptate vel tempore tenetur ipsa quae aut. Ipsum exercitationem iure minima enim corporis et voluptate.</p>
+                    <div class="text">
+                        <h3 data-en="Ahmed El-Masry" data-ar="أحمد المصري">Ahmed El-Masry</h3>
+                        <p data-en="Senior real estate consultant with over 12 years of experience, specializing in luxury residential properties in Dubai and Abu Dhabi." data-ar="مستشار عقاري أول بخبرة تزيد عن 12 عامًا، متخصص في العقارات السكنية الفاخرة في دبي وأبوظبي.">
+                            Senior real estate consultant with over 12 years of experience, specializing in luxury residential properties in Dubai and Abu Dhabi.
+                        </p>
                     </div>
-
                 </div>
             </div>
             <div class="col-lg-4">
                 <div class="card">
-                    <div class="img ">
-                        <img src="~/imgs/team-2.jpg " alt="chefs2 ">
-                        <div class="icons ">
-                            <a href="https://x.com/" target="_blank"><i class="fa-brands fa-twitter "></i></a>
-                            <a href="https://www.facebook.com/" target="_blank"><i class="fa-brands fa-facebook-f "></i></a>
-                            <a href="https://www.instagram.com/" target="_blank"><i class="fa-brands fa-instagram "></i></a>
-                            <a href="https://www.linkedin.com/" target="_blank"><i class="fa-brands fa-linkedin "></i></a>
+                    <div class="img">
+                        <img src="https://image.pollinations.ai/prompt/medium shot portrait of an Arab woman named Fatima Al-Shami, in her 30s, professional, elegant, wearing a hijab, warm smile, against a plain white background" alt="Fatima Al-Shami">
+                        <div class="icons">
+                            <a href="https://x.com/" target="_blank"><i class="fa-brands fa-twitter"></i></a>
+                            <a href="https://www.facebook.com/" target="_blank"><i class="fa-brands fa-facebook-f"></i></a>
+                            <a href="https://www.instagram.com/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+                            <a href="https://www.linkedin.com/" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
                         </div>
                     </div>
-                    <div class="text ">
-                        <h3>Sarah Jhonson</h3>
-                        <p>Quo esse repellendus quia id. Est eum et accusantium pariatur fugit nihil minima suscipit corporis. Voluptate sed quas reiciendis animi neque sapiente.</p>
+                    <div class="text">
+                        <h3 data-en="Fatima Al-Shami" data-ar="فاطمة الشامي">Fatima Al-Shami</h3>
+                        <p data-en="Sales Manager with exceptional negotiation skills. She leads the sales team to achieve annual goals with a focus on client satisfaction." data-ar="مديرة مبيعات تتمتع بمهارات تفاوضية استثنائية. تقود فريق المبيعات لتحقيق الأهداف السنوية مع التركيز على رضا العملاء.">
+                            Sales Manager with exceptional negotiation skills. She leads the sales team to achieve annual goals with a focus on client satisfaction.
+                        </p>
                     </div>
-
                 </div>
             </div>
             <div class="col-lg-4">
                 <div class="card">
-                    <div class="img ">
-                        <img src="~/imgs/team-3.jpg " alt="chefs3 ">
-                        <div class="icons ">
-                            <a href="https://x.com/" target="_blank"><i class="fa-brands fa-twitter "></i></a>
-                            <a href="https://www.facebook.com/" target="_blank"><i class="fa-brands fa-facebook-f "></i></a>
-                            <a href="https://www.instagram.com/" target="_blank"><i class="fa-brands fa-instagram "></i></a>
-                            <a href="https://www.linkedin.com/" target="_blank"><i class="fa-brands fa-linkedin "></i></a>
+                    <div class="img">
+                        <img src="https://image.pollinations.ai/prompt/medium shot portrait of an Arab man named Khaled bin Abdulaziz, in his 30s, sharp, intelligent, wearing modern business attire, thoughtful expression, against a plain white background" alt="Khaled bin Abdulaziz">
+                        <div class="icons">
+                            <a href="https://x.com/" target="_blank"><i class="fa-brands fa-twitter"></i></a>
+                            <a href="https://www.facebook.com/" target="_blank"><i class="fa-brands fa-facebook-f"></i></a>
+                            <a href="https://www.instagram.com/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+                            <a href="https://www.linkedin.com/" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
                         </div>
                     </div>
-                    <div class="text ">
-                        <h3>William Anderson</h3>
-                        <p>Vero omnis enim consequatur. Voluptas consectetur unde qui molestiae deserunt. Voluptates enim aut architecto porro aspernatur molestiae modi.</p>
+                    <div class="text">
+                        <h3 data-en="Khaled bin Abdulaziz" data-ar="خالد بن عبد العزيز">Khaled bin Abdulaziz</h3>
+                        <p data-en="Commercial real estate specialist with deep knowledge of the Saudi market. Helps companies find ideal office and retail spaces." data-ar="متخصص في العقارات التجارية ويمتلك معرفة عميقة بالسوق السعودي. يساعد الشركات على إيجاد المساحات المكتبية والتجارية المثالية.">
+                            Commercial real estate specialist with deep knowledge of the Saudi market. Helps companies find ideal office and retail spaces.
+                        </p>
                     </div>
-
-
                 </div>
             </div>
         </div>
-
     </div>
 </section>
 <section class="section-padding">
